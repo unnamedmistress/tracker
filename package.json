@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^9.1.4",
+    "mysql2": "^3.1.0"
+  },
+  "name": "tracker",
+  "description": "1. [Title: Keep track of your employees in this management system.](#title)\r 2. [Description/Problem Solved](#description)\r 3. [Installation](#installation)\r 4. [License and Link: ](#license)\r 5. [Credit](#credit)\r 6. [Installation Steps](#installation-steps)\r 7. [Intended Usage](#intended-usage)\r 8. [Tests?](#Tests)\r 9. [Questions?](#questions)",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unnamedmistress/tracker.git"
+  },
+  "author": "Chrysti Reichert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unnamedmistress/tracker/issues"
+  },
+  "homepage": "https://github.com/unnamedmistress/tracker#readme"
+}
