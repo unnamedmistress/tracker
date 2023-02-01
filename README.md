@@ -10,7 +10,7 @@
 8. [Tests?](#Tests)
 9. [Questions?](#questions)
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/e60Eswp2EmM/0.jpg)](http://www.youtube.com/watch?v=e60Eswp2EmM "Video Title")
+[![IMAGE ALT TEXT](/tracker/db/Screenshot%202023-02-01%20164512.png)
 
 # Title: Keep track of your employees in this management system.
 ## Description/Problem Solved 
