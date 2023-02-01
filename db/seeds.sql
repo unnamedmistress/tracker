@@ -31,3 +31,19 @@ SELECT employee.id, employee.first_name, employee.last_name, role.title, departm
   ORDER BY employee.id;
   
 SELECT first_name, last_name, role_id FROM employee 	WHERE employee.id = 4;
+-- LEFT JOIN clause:
+-- Joins the "employee" table with the "manager" table on the "manager.id" = "employee.manager_id" condition.
+-- The "LEFT JOIN" keyword ensures that all records from the "employee" table will be included in the result set,
+-- even if there are no matching records in the "manager" table.
+
+-- INNER JOIN clauses:
+-- Joins the "role" table and "department" table with the "employee" table based on the conditions:
+-- "role.id" = "employee.role_id" and "department.id" = "role.department_id".
+-- The "INNER JOIN" keyword returns only those records that match in both joined tables.
+
+-- ORDER BY clause:
+-- Orders the result set by the "id" column of the "employee" table.
+
+-- SELECT statement:
+-- Selects the "first_name", "last_name", and "role_id" columns from the "employee" table.
+-- The "WHERE" clause returns only those rows where the "employee.id" is equal to 4.

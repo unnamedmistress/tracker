@@ -1,10 +1,23 @@
 DROP DATABASE IF EXISTS employees;
 CREATE DATABASE employees;
 USE employees;
+
+-- CREATE TABLE "department": Creates a table named "department".
+-- "id" is an unsigned integer that will be automatically incremented and used as the primary key.
+-- "name" is a string with a maximum length of 30 characters and must be unique and not null.
 CREATE TABLE department (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(30) UNIQUE NOT NULL
 );
+
+-- CREATE TABLE "role": Creates a table named "role".
+-- "id" is an unsigned integer that will be automatically incremented and used as the primary key.
+-- "title" is a string with a maximum length of 30 characters and must be unique and not null.
+-- "salary" is an unsigned decimal number and must not be null.
+-- "department_id" is an unsigned integer and must not be null.
+-- An index is created for "department_id".
+-- A foreign key constraint is created to reference the "id" of the "department" table. 
+-- If a record in the "department" table is deleted, the corresponding records in the "role" table will be deleted as well.
 CREATE TABLE role (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(30) UNIQUE NOT NULL,
@@ -13,6 +26,18 @@ CREATE TABLE role (
   INDEX dep_ind (department_id),
   CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE CASCADE
 );
+
+- CREATE TABLE "employee": Creates a table named "employee".
+-- "id" is an unsigned integer that will be automatically incremented and used as the primary key.
+-- "first_name" is a string with a maximum length of 30 characters and must not be null.
+-- "last_name" is a string with a maximum length of 30 characters and must not be null.
+-- "role_id" is an unsigned integer and must not be null.
+-- An index is created for "role_id".
+-- A foreign key constraint is created to reference the "id" of the "role" table. 
+-- If a record in the "role" table is deleted, the corresponding records in the "employee" table will be deleted as well.
+-- "manager_id" is an unsigned integer.
+-- An index is created for "manager_id".
+-- A foreign key constraint is created to reference the "id" of the "employee" table. 
 CREATE TABLE employee (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
