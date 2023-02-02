@@ -10,8 +10,8 @@
 8. [Tests?](#Tests)
 9. [Questions?](#questions)
 
-[![IMAGE ALT TEXT](/tracker/db/Screenshot%202023-02-01%20164512.png)
-[![Video](https://www.youtube.com/watch?v=MXgTDC0Ghsg)](https://www.youtube.com/watch?v=MXgTDC0Ghsg)
+[![IMAGE ALT TEXT](https://raw.githubusercontent.com/unnamedmistress/tracker/main/db/Screenshot%202023-02-01%20164512.png)
+# See for yourself:  https://www.youtube.com/watch?v=MXgTDC0Ghsg
 
 
 # Title: Keep track of your employees in this management system.
