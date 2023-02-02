@@ -11,6 +11,8 @@
 9. [Questions?](#questions)
 
 [![IMAGE ALT TEXT](/tracker/db/Screenshot%202023-02-01%20164512.png)
+[![Video](http://img.youtube.com/vi/MXgTDC0Ghsg/0.jpg)](http://img.youtube.com/vi/MXgTDC0Ghsg/0.jpg)
+
 
 # Title: Keep track of your employees in this management system.
 ## Description/Problem Solved 
