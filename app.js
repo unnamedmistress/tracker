@@ -1,67 +1,68 @@
 const connection = require("./db/connect");
 // Importing the connection module from the file
 const inquirer = require('inquirer');
-const promptMessages = {
-  viewAllEmployees: "View All Employees",
-  viewByDepartment: "View All Employees By Department",
-  viewByManager: "View All Employees By Manager",
-  addEmployee: "Add An Employee",
-  removeEmployee: "Remove An Employee",
-  updateRole: "Update Employee Role",
+//prompting the user for input 
+const promptMsg = {
+  viewAllEmployees: "View All Employees who are working in the company",
+  viewByDepartment: "View All Employees By Department they work in",
+  viewByManager: "View All Employees By Manager they work under",
+  addEmployee: "Add An Employee to this repository",
+  removeEmployee: "Remove An Employee - This will remove the employee from the database",
+  updateRole: "Update Employee Role - This will update the employee's role in the database",
   updateEmployeeManager: "Update Employee Manager",
   viewAllRoles: "View All Roles",
   exit: "Exit",
 };
-// Object containing key-value pairs of prompt messages used in the application
+//This function is used to display a list of prompts, user can select from them and can trigger desired actions.
 function prompt() {
   inquirer
     .prompt({
       name: "action",
       type: "list",
-      message: "What would you like to do?",
+      message: "What would you like to do next?",
       choices: [
-        promptMessages.viewAllEmployees,
-        promptMessages.viewByDepartment,
-        promptMessages.viewByManager,
-        promptMessages.viewAllRoles,
-        promptMessages.addEmployee,
-        promptMessages.removeEmployee,
-        promptMessages.updateRole,
-        promptMessages.exit,
+       promptMsg.viewAllEmployees,
+       promptMsg.viewByDepartment,
+       promptMsg.viewByManager,
+       promptMsg.viewAllRoles,
+       promptMsg.addEmployee,
+       promptMsg.removeEmployee,
+       promptMsg.updateRole,
+       promptMsg.exit,
       ],
     })
     .then((answer) => {
       console.log("answer", answer);
       switch (answer.action) {
-        case promptMessages.viewAllEmployees:
+        case promptMsg.viewAllEmployees:
           viewAllEmployees();
           break;
 
-        case promptMessages.viewByDepartment:
+        case promptMsg.viewByDepartment:
           viewByDepartment();
           break;
 
-        case promptMessages.viewByManager:
+        case promptMsg.viewByManager:
           viewByManager();
           break;
 
-        case promptMessages.addEmployee:
+        case promptMsg.addEmployee:
           addEmployee();
           break;
 
-        case promptMessages.removeEmployee:
+        case promptMsg.removeEmployee:
           remove("delete");
           break;
 
-        case promptMessages.updateRole:
+        case promptMsg.updateRole:
           remove("role");
           break;
 
-        case promptMessages.viewAllRoles:
+        case promptMsg.viewAllRoles:
           viewAllRoles();
           break;
 
-        case promptMessages.exit:
+        case promptMsg.exit:
           connection.end();
           break;
       }
@@ -117,7 +118,7 @@ function viewByManager() {
     prompt();
   });
 }
-
+//a function to view all roles
 function viewAllRoles() {
   const query = `SELECT role.title, employee.id, employee.first_name, employee.last_name, department.name AS department
     FROM employee
@@ -186,7 +187,7 @@ async function addEmployee() {
           }
         }
         console.log(
-          "Employee has been added. Please view all employee to verify..."
+          "Employee has been added. Please view all employee to verify this..."
         );
         connection.query(
           "INSERT INTO employee SET ?",
@@ -246,7 +247,7 @@ async function removeEmployee() {
       if (err) throw err;
     }
   );
-  console.log("Employee has been removed on the system!");
+  console.log("Success Employee has been removed on the system!");
   prompt();
 }
 
@@ -295,7 +296,7 @@ async function updateRole() {
     }
   );
 }
-
+//a function to add a worker a department
 function askName() {
   return [
     {
